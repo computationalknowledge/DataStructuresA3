@@ -17,9 +17,12 @@ namespace ConsoleApp1
     }
 
     class InputNames
-    {
+    {   Queue<string> names;
+        int counter = 0;
+
         public void Run()
         {
+            names = new Queue<string>();
             // how can I import a text file into a QUEUE data structure?
             // 1. get a HANDLE on the text file.
 
@@ -29,12 +32,12 @@ namespace ConsoleApp1
             var fileStream = new FileStream(@"C:\Users\HP\Dropbox\Academic_Desk\ProgramCode\CSharpDataStructure\ConsoleApp1\ConsoleApp1\names.txt", FileMode.Open, FileAccess.Read);
             using (StreamReader file = new StreamReader(fileStream))
             {
-                int counter = 0;
+                
                 string ln;
 
                 while ((ln = file.ReadLine()) != null)
                 {
-                    Console.WriteLine(ln);
+                    names.Enqueue(ln);
                     counter++;
                 }
                 file.Close();

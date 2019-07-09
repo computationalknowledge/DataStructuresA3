@@ -21,7 +21,7 @@ namespace ConsoleApp1
         private static Queue<string> names;
         int counter = 0;
 
-        public Queue<string> GetQueue()
+        public static Queue<string> GetQueue()
         {
             return names;
         }
@@ -60,9 +60,9 @@ namespace ConsoleApp1
         {
             // how do I access the names in the names Queue?
             // how to GET ACCESS TO THE NAMES QUEUE??
-            InputNames.names;
+            
             names = new Stack<string>();
-            names.Pop();
+            names.Push((InputNames.GetQueue()).Dequeue());
         }
     }
 }

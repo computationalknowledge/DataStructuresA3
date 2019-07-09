@@ -17,8 +17,14 @@ namespace ConsoleApp1
     }
 
     class InputNames
-    {   Queue<string> names;
+    {
+        private static Queue<string> names;
         int counter = 0;
+
+        public Queue<string> GetQueue()
+        {
+            return names;
+        }
 
         public void Run()
         {
@@ -43,6 +49,20 @@ namespace ConsoleApp1
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
             }
+        }
+    }
+
+    class PlayWithStacks {
+
+        static Stack<string> names; 
+
+        public void Run()
+        {
+            // how do I access the names in the names Queue?
+            // how to GET ACCESS TO THE NAMES QUEUE??
+            InputNames.names;
+            names = new Stack<string>();
+            names.Pop();
         }
     }
 }
